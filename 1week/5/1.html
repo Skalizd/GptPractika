@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Данте из Devil May Cry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: #ff6347;
+        }
+        h2 {
+            font-size: 40px;
+            color: #ff6347;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        header, footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            font-size: 18px;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        img {
+            border-radius: 10px;
+            margin: 10px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 20px;
+            background-color: #333;
+        }
+        th, td {
+            border: 2px solid #ff6347;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #ff6347;
+            color: white;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        input[type="submit"] {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://sun9-28.userapi.com/impg/c858036/v858036466/15fe84/-txozAjTmj4.jpg?size=807x472&quality=96&sign=b75a6f39933d6d6b152a10ada16497c4&type=album" alt="Логотип Данте" width="100">
+        <nav>
+            <a href="#about">О Данте</a>
+            <a href="#games">Игры серии с его участвием</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Данте и Devil May Cry</h1>
+        <h2 id="about">Кто такой Данте?</h2>
+        <p>Данте — главный герой серии игр Devil May Cry. Он — охотник на демонов, сын спарды и человеческой женщины.</p>
+        <p>Его стиль боя сочетает в себе использование меча и огнестрельного оружия, а также различные демонические способности.</p>
+        <img src="dante_image.jpg" alt="Данте" width="300">
+
+        <h2 id="games">Игры серии Devil May Cry</h2>
+        <table>
+            <tr>
+                <th>Название игры</th>
+                <th>Год выпуска</th>
+                <th>Платформы</th>
+            </tr>
+            <tr>
+                <td>Devil May Cry</td>
+                <td>2001</td>
+                <td>PlayStation 2, Xbox, PC</td>
+            </tr>
+            <tr>
+                <td>Devil May Cry 2</td>
+                <td>2003</td>
+                <td>PlayStation 2, Xbox</td>
+            </tr>
+            <tr>
+                <td>Devil May Cry 3</td>
+                <td>2005</td>
+                <td>PlayStation 2, Xbox, PC</td>
+            </tr>
+            <tr>
+                <td>Devil May Cry 4</td>
+                <td>2008</td>
+                <td>PlayStation 3, Xbox 360, PC</td>
+            </tr>
+            <tr>
+                <td>Devil May Cry 5</td>
+                <td>2019</td>
+                <td>PlayStation 4, Xbox One, PC</td>
+            </tr>
+        </table>
+        <h2>Оставить отзыв</h2>
+        <form>
+            <label for="name">Ваше имя:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="review">Ваш отзыв:</label><br>
+            <textarea id="review" name="review" rows="5" cols="50" required></textarea><br><br>
+            <input type="submit" value="Отправить">
+        </form>
+    </main>
+    <footer>
+        <p>© 2023 Devil May Cry Fan Site</p>
+        <p>Адрес: г. Лимбо, ул. Демоническая, 1</p>
+        <p>Телефон: +7 (777) 777-77-77</p>
+        <a href="https://vk.com/devilmaycry" target="_blank">
+            <img src="vk_logo.png" alt="ВКонтакте" width="50">
+        </a>
+    </footer>
+</body>
+</html>
