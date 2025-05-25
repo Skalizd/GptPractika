@@ -1,0 +1,242 @@
+<html>
+<head>
+    <style>
+
+        body {
+            margin: 20px;
+            font-family: Arial;
+            background: #1a1a1a;
+            color: white;
+        }
+
+
+        header {
+            background: #660000;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ff4444;
+            font-size: 48px;
+            text-shadow: 2px 2px black;
+        }
+
+
+        nav {
+            background: #330000;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff7777;
+            text-decoration: underline;
+        }
+
+
+        .content-block {
+            background: #2a2a2a;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #ff5555;
+            font-size: 32px;
+            border-bottom: 2px solid #ff5555;
+            padding-bottom: 10px;
+        }
+
+
+        .weapon {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #333;
+            border-radius: 8px;
+        }
+
+        .weapon img {
+            width: 200px;
+            margin-right: 30px;
+            border: 2px solid #ff5555;
+        }
+
+
+        select {
+            padding: 10px;
+            font-size: 20px;
+            margin: 15px 0;
+            background: #444;
+            color: white;
+            border: 2px solid #ff5555;
+        }
+
+        .contacts {
+            background: #400000;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .ability {
+            background: #333;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #ff5555;
+        }
+    
+        .ability img {
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+    
+        .ability h3 {
+            color: #ff5555;
+            font-size: 24px;
+            margin-top: 0;
+        }
+    
+        /* Стили для истории */
+        .story-item {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #ff5555;
+        }
+    
+        .story-item h3 {
+            color: #ff8888;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+    
+        .story-item img {
+            border: 2px solid #ff5555;
+            margin: 10px 0;
+        }
+    
+        .story-item ul {
+            padding-left: 25px;
+            font-size: 18px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nero - Devil May Cry</h1>
+    </header>
+
+    <nav>
+        <a href="#weapons">Оружие</a>
+        <a href="#abilities">Умения</a>
+        <a href="#story">История</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="content-block">
+        <h2>Выбери свою миссию:</h2>
+        <select>
+            <option>Красное могильное море</option>
+            <option>Заброшенный храм</option>
+            <option>Адская башня</option>
+        </select>
+    </div>
+
+    <div id="weapons" class="content-block">
+        <h2>Арсенал Неро</h2>
+        
+        <div class="weapon">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/7/70/DMC5_Red_Queen.png/revision/latest?cb=20190216010555" alt="Red Queen5">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/8/83/DMC4_Red_Queen.png/revision/latest?cb=20190324160439" alt="Red Queen4">
+            <div>
+                <h3>Red Queen</h3>
+                <p>Мощный меч с системой ускорения. Максимальный уровень заряда: III</p>
+            </div>
+        </div>
+
+        <div class="weapon">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/7/71/Blue_Rose_DMC5.png/revision/latest?cb=20190314105913" alt="Blue Rose5">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/8/89/Blue_Rose_DMC4.png/revision/latest?cb=20181201021115" alt="Blue Rose4">
+            <div>
+                <h3>Blue Rose</h3>
+                <p>Револьвер двойного действия. Возможность заряженного выстрела</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="abilities" class="content-block">
+        <h2>Дьявольские Способности</h2>
+        
+        <div class="ability">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/6/67/Devil_Bringer_DMC5.png/revision/latest/scale-to-width-down/1000?cb=20190419200802" alt="Devil Bringer5">
+            <img src="https://static.wikia.nocookie.net/devilmaycry/images/a/a9/Devil_Bringer_DMC4.png/revision/latest?cb=20120628052644" alt="Devil Bringer4">
+            <div class="ability-info">
+                <h3>Devil Bringer ✦</h3>
+                <p>▸ Демоническая рука с телекинетическими способностями<br>
+                    ▸ Захват противников на расстоянии<br>
+                    ▸ Мощные броски и комбо-атаки<br>
+                    <span style="color:#ff9999">Энергопотребление: 15 DT/сек</span></p>
+            </div>
+        </div>
+    
+        <div class="ability">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/021/769/733/large/kevin-demuynck-dmc-facebook5.jpg?1572889912" alt="Devil Trigger5">
+            <img src="https://pm1.aminoapps.com/7102/77e29c49b9347af267f69aca7e8f44a00bf0fe72r1-1600-1137v2_hq.jpg" alt="Devil Trigger4">
+            <div class="ability-info">
+                <h3>Devil Trigger ★</h3>
+                <p>▸ Активация дьявольской формы<br>
+                    ▸ +200% к урону<br>
+                    ▸ Постепенная регенерация здоровья<br>
+                    <span style="color:#ff9999">Требует полный заряд DT-ядра</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="story" class="content-block">
+        <h2>История Неро</h2>
+        
+        <div class="story-item">
+            <h3> 2005 - Начало</h3>
+            <p>Первое появление в Devil May Cry 4 как молодого охотника на демонов</p>
+            <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/3/3c/Devil_May_Cry_4_Box_Cover.jpg/330px-Devil_May_Cry_4_Box_Cover.jpg" alt="Неро в DMC4" width="250">
+        </div>
+    
+        <div class="story-item">
+            <h3> 2019 - Возвращение</h3>
+            <p>Главный герой Devil May Cry 5 с новыми способностями и прошением</p>
+            <ul>
+                <li>Потерял демоническую руку</li>
+                <li>Обрёл Devil Breaker</li>
+                <li>Раскрыл своё происхождение</li>
+            </ul>
+            <img src="https://static.wikia.nocookie.net/dmcgame/images/9/90/DMC5_Nero.jpg/revision/latest/scale-to-width-down/1200?cb=20190303073258&path-prefix=ru" alt="Неро в DMC4" width="250">
+        </div>
+    </div>
+
+
+    <div id="contacts" class="contacts">
+        <h2>Стань охотником!</h2>
+        <p>Телефон: 666-13-666</p>
+        <p>Адрес: Демонический проспект, 666</p>
+        <p>E-mail: nero_devilhunter@dmc.com</p>
+    </div>
+</body>
+</html>
