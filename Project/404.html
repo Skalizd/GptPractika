@@ -5,31 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница не найдена | Моя семья – мой космос</title>
     <style>
-        /* Общие стили  */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #e0e0e0;
-            line-height: 1.6;
+            background-color: #111;
+            color: #eee;
+            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         
         a {
+            color: #4af;
             text-decoration: none;
-            color: #ff6b6b;
-            transition: all 0.3s ease;
         }
         
         a:hover {
-            color: #ff9e6b;
             text-decoration: underline;
         }
         
@@ -42,10 +39,9 @@
         
         /* Шапка сайта */
         header {
-            background: linear-gradient(90deg, #ff6b6b, #ff9e6b);
+            background: #222;
             padding: 15px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            border-bottom: 3px solid #ffd166;
+            border-bottom: 3px solid #4af;
         }
         
         .header-content {
@@ -61,18 +57,15 @@
         
         .logo img {
             height: 50px;
-            margin-right: 15px;
-            border: 2px solid #ffd166;
+            margin-right: 10px;
+            border: 2px solid #4af;
             border-radius: 50%;
-            padding: 3px;
-            background: white;
         }
         
         .logo-text {
             font-size: 24px;
             font-weight: bold;
-            color: #1a1a2e;
-            text-shadow: 2px 2px 0 #ffd166;
+            color: #4af;
         }
         
         nav ul {
@@ -82,120 +75,147 @@
         
         nav ul li {
             margin-left: 20px;
-            padding: 5px 10px;
-            background: #1a1a2e;
-            border-radius: 5px;
-            border: 1px solid #ffd166;
         }
         
         nav ul li a {
-            font-size: 16px;
-            color: #ffd166;
-        }
-        
-        nav ul li a:hover {
             color: white;
-            text-decoration: none;
+            font-weight: bold;
         }
         
-        /* Основное содержимое 404*/
+        /* Основное содержимое 404 */
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .space-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(68, 68, 136, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(68, 68, 136, 0.1) 0%, transparent 40%),
+                linear-gradient(to bottom, #111 0%, #0a0a1a 100%);
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px),
+                radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 1px);
+            background-size: 300px 300px, 200px 200px, 100px 100px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            z-index: -1;
         }
         
         .error-container {
+            background: rgba(34, 34, 51, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid #4af;
+            text-align: center;
+            max-width: 700px;
             width: 90%;
-            max-width: 800px;
-            background: rgba(26, 26, 46, 0.8);
-            padding: 30px;
-            border: 3px solid #ff6b6b;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 0 20px rgba(68, 136, 255, 0.3);
+            position: relative;
         }
         
         .error-code {
             font-size: 120px;
             font-weight: bold;
-            color: #ff6b6b;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            color: #4af;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(68, 136, 255, 0.7);
         }
         
         .error-title {
             font-size: 36px;
+            color: white;
             margin-bottom: 20px;
-            color: #ffd166;
         }
         
         .error-description {
             font-size: 18px;
-            color: #e0e0e0;
+            color: #aaa;
             margin-bottom: 30px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
-        .error-image {
-            width: 250px;
-            height: 250px;
+        .astronaut {
+            width: 200px;
+            height: 200px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, #ff6b6b, #ff9e6b);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .astronaut::before {
+            content: "👨‍🚀";
+            font-size: 180px;
+            display: block;
+            text-align: center;
+            transform: rotate(-20deg);
+        }
+        
+        .astronaut::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 100px;
+            height: 30px;
+            background: rgba(68, 136, 255, 0.3);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 5px solid #ffd166;
-            box-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
+            transform: translateX(-50%);
+            filter: blur(10px);
+            z-index: -1;
         }
         
-        .error-image img {
-            max-width: 80%;
-            max-height: 80%;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
         
         .home-button {
             display: inline-block;
-            background: linear-gradient(90deg, #ff6b6b, #ff9e6b);
-            color: #1a1a2e;
+            background: #4af;
+            color: white;
             padding: 15px 40px;
-            border-radius: 50px;
+            border-radius: 5px;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 18px;
             transition: all 0.3s ease;
-            border: 3px solid #ffd166;
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.5);
-            margin-top: 20px;
+            border: none;
+            cursor: pointer;
         }
         
         .home-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.8);
-            color: #1a1a2e;
+            background: #39e;
             text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(68, 136, 255, 0.4);
         }
         
-        /* Подвал сайта  */
+        /* Подвал сайта */
         footer {
-            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            background: #111;
             padding: 30px 0 15px;
-            color: #e0e0e0;
-            border-top: 3px solid #ffd166;
+            border-top: 3px solid #4af;
         }
         
         .footer-container {
@@ -206,9 +226,6 @@
         
         .footer-about, .footer-links {
             padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            border: 1px solid #ffd166;
         }
         
         .footer-logo {
@@ -220,36 +237,35 @@
         .footer-logo img {
             height: 40px;
             margin-right: 10px;
-            border: 2px solid #ffd166;
+            border: 2px solid #4af;
             border-radius: 50%;
-            padding: 2px;
-            background: white;
         }
         
         .footer-logo-text {
             font-size: 20px;
             font-weight: bold;
-            color: #ffd166;
+            color: #4af;
         }
         
         .footer-contact {
             margin-bottom: 12px;
             font-size: 16px;
+            color: #aaa;
         }
         
         .footer-contact a {
-            color: #ff6b6b;
+            color: #4af;
         }
         
         .footer-contact a:hover {
-            color: #ff9e6b;
+            color: #39e;
         }
         
         .footer-links h3 {
-            color: #ffd166;
+            color: white;
             margin-bottom: 15px;
             font-size: 20px;
-            border-bottom: 2px solid #ff6b6b;
+            border-bottom: 2px solid #4af;
             padding-bottom: 5px;
         }
         
@@ -262,23 +278,24 @@
         }
         
         .footer-links a {
-            color: #e0e0e0;
+            color: #aaa;
             font-size: 16px;
         }
         
         .footer-links a:hover {
-            color: #ff9e6b;
+            color: #39e;
         }
         
         .footer-bottom {
             text-align: center;
             margin-top: 30px;
             padding-top: 15px;
-            border-top: 1px solid #ffd166;
+            border-top: 1px solid #333;
             font-size: 14px;
+            color: #777;
         }
         
-        /* Адаптивность - простая реализация */
+        /* Адаптивность */
         @media (max-width: 900px) {
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -296,16 +313,16 @@
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
+                text-align: center;
             }
             
             nav ul {
                 margin-top: 15px;
-                flex-wrap: wrap;
                 justify-content: center;
             }
             
             nav ul li {
-                margin: 5px;
+                margin: 0 10px;
             }
             
             .footer-container {
@@ -320,9 +337,13 @@
                 font-size: 26px;
             }
             
-            .error-image {
-                width: 200px;
-                height: 200px;
+            .astronaut {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .astronaut::before {
+                font-size: 140px;
             }
         }
         
@@ -331,9 +352,12 @@
                 font-size: 20px;
             }
             
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
             nav ul li {
-                font-size: 14px;
-                padding: 4px 8px;
+                margin: 5px;
             }
             
             .error-code {
@@ -350,7 +374,7 @@
             
             .home-button {
                 padding: 12px 30px;
-                font-size: 18px;
+                font-size: 16px;
             }
         }
     </style>
@@ -376,22 +400,20 @@
         </div>
     </header>
 
-    <!-- Основное содержимое - фокус на ошибке -->
     <main class="main-content">
+        <div class="space-bg"></div>
+        <div class="stars"></div>
         <div class="container">
             <div class="error-container">
-                <div class="error-image">
-                    <img src="https://quasa.io/storage/images/news/1wy7s2BEZhuJaqYsay2yO8QkAYe76BvTD1K7A7Gt.png" alt="Ошибка 404">
-                </div>
+                <div class="astronaut"></div>
                 <h1 class="error-code">404</h1>
                 <h2 class="error-title">Страница не найдена</h2>
-                <p class="error-description">Ой! Похоже, вы заблудились в космосе. Страница, которую вы ищете, исчезла или никогда не существовала. Не волнуйтесь, наша команда уже ищет её!</p>
+                <p class="error-description">Кажется, вы заблудились в космическом пространстве нашего сайта. Страница, которую вы ищете, возможно, была перемещена на другую орбиту или больше не существует.</p>
                 <a href="index.html" class="home-button">Вернуться на главную</a>
             </div>
         </div>
     </main>
 
-    <!-- Подвал сайта - просто и понятно -->
     <footer>
         <div class="container">
             <div class="footer-container">
