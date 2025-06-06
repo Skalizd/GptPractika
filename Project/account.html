@@ -1,623 +1,579 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Личный кабинет | Моя семья – мой космос</title>
-        <style>
-            /* Общие стили для темной темы */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Arial', sans-serif;
-            }
-            
-            body {
-                background-color: #121212;
-                color: #e0e0e0;
-                line-height: 1.6;
-            }
-            
-            a {
-                text-decoration: none;
-                color: #0bc1ee;
-            }
-            
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-            
-            /* Шапка сайта */
-            header {
-                background-color: #1e1e1e;
-                padding: 20px 0;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            }
-            
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет | Моя семья – мой космос</title>
+    <style>
+        /* Простые базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #222;
+            color: #eee;
+            line-height: 1.5;
+        }
+        
+        a {
+            color: #4af;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка - просто и понятно */
+        header {
+            background: #333;
+            padding: 15px 0;
+            border-bottom: 3px solid #4af;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            border: 2px solid #4af;
+            border-radius: 50%;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4af;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Основное содержимое */
+        .account-section {
+            padding: 30px 0;
+        }
+        
+        .account-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 20px 0;
+            color: #4af;
+            text-shadow: 0 0 5px rgba(0, 100, 255, 0.5);
+        }
+        
+        .account-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        /* Блок профиля */
+        .profile-card {
+            flex: 1;
+            min-width: 300px;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4af;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #555;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info h3 {
+            font-size: 22px;
+            color: white;
+        }
+        
+        .profile-info p {
+            color: #aaa;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .detail-value {
+            font-size: 16px;
+        }
+        
+        .logout-btn {
+            display: block;
+            width: 100%;
+            background: #f44;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .logout-btn:hover {
+            background: #f33;
+        }
+        
+        /* Форма записи */
+        .booking-form {
+            flex: 1;
+            min-width: 300px;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4af;
+        }
+        
+        .form-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        
+        .form-input, .form-select {
+            width: 100%;
+            padding: 10px;
+            background: #444;
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #4af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: #39e;
+        }
+        
+        /* Список записей */
+        .bookings-list {
+            width: 100%;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4af;
+            margin-top: 20px;
+        }
+        
+        .bookings-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .booking-item {
+            background: #444;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .booking-name {
+            font-weight: bold;
+            color: white;
+        }
+        
+        .booking-meta {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .cancel-btn {
+            background: #f44;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .cancel-btn:hover {
+            background: #f33;
+        }
+        
+        /* Подвал */
+        footer {
+            background: #111;
+            padding: 30px 0;
+            margin-top: 30px;
+            border-top: 3px solid #4af;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-about {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+            border: 2px solid #4af;
+            border-radius: 50%;
+        }
+        
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4af;
+        }
+        
+        .footer-contact {
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+        }
+        
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
             .header-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-            
-            .logo img {
-                height: 50px;
-                margin-right: 15px;
-            }
-            
-            .logo-text {
-                font-size: 24px;
-                font-weight: bold;
-                color: #0bc1ee;
+                flex-direction: column;
+                text-align: center;
             }
             
             nav ul {
-                display: flex;
-                list-style: none;
+                margin-top: 15px;
+                justify-content: center;
             }
             
             nav ul li {
-                margin-left: 25px;
-            }
-            
-            nav ul li a {
-                font-size: 16px;
-                transition: color 0.3s;
-            }
-            
-            nav ul li a:hover {
-                color: #ffffff;
-            }
-            
-            /* Основное содержимое */
-            .account-section {
-                padding: 60px 0;
-                min-height: calc(100vh - 150px);
-            }
-            
-            .account-container {
-                max-width: 800px;
-                margin: 0 auto;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 40px;
-            }
-            
-            .account-title {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 32px;
-                color: #ffffff;
-            }
-            
-            /* Блок профиля */
-            .profile-card {
-                flex: 1;
-                min-width: 300px;
-                background-color: #1e1e1e;
-                border-radius: 10px;
-                padding: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                margin: 0 10px;
             }
             
             .profile-header {
-                display: flex;
-                align-items: center;
-                margin-bottom: 30px;
+                flex-direction: column;
+                text-align: center;
             }
             
             .profile-avatar {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                background-color: #333;
-                margin-right: 20px;
-                background-size: cover;
-                background-position: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 30px;
-                color: #0bc1ee;
-            }
-            
-            .profile-info h3 {
-                font-size: 22px;
-                margin-bottom: 5px;
-                color: #ffffff;
-            }
-            
-            .profile-info p {
-                color: #b0b0b0;
-            }
-            
-            .profile-details {
-                margin-top: 20px;
-            }
-            
-            .detail-item {
+                margin-right: 0;
                 margin-bottom: 15px;
-            }
-            
-            .detail-label {
-                color: #b0b0b0;
-                font-size: 14px;
-                margin-bottom: 5px;
-            }
-            
-            .detail-value {
-                font-size: 16px;
-            }
-            
-            .logout-btn {
-                display: block;
-                width: 100%;
-                background-color: #ee0f38;
-                color: #121212;
-                border: none;
-                padding: 12px;
-                border-radius: 5px;
-                font-weight: bold;
-                cursor: pointer;
-                margin-top: 30px;
-                transition: background-color 0.3s;
-                text-align: center;
-            }
-            
-            .logout-btn:hover {
-                background-color: #ee0f38;
-            }
-            
-            /* Форма записи на конкурсы */
-            .booking-form {
-                flex: 1;
-                min-width: 300px;
-                background-color: #1e1e1e;
-                border-radius: 10px;
-                padding: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .form-title {
-                font-size: 22px;
-                margin-bottom: 25px;
-                color: #ffffff;
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-label {
-                display: block;
-                margin-bottom: 8px;
-                color: #b0b0b0;
-            }
-            
-            .form-input, .form-select {
-                width: 100%;
-                padding: 12px 15px;
-                background-color: #333;
-                border: 1px solid #444;
-                border-radius: 5px;
-                color: #ffffff;
-                font-size: 16px;
-            }
-            
-            .form-input:focus, .form-select:focus {
-                outline: none;
-                border-color: #0bc1ee;
             }
             
             .form-row {
-                display: flex;
-                gap: 15px;
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .form-row .form-group {
-                flex: 1;
-            }
-            
-            .submit-btn {
-                background-color: #0bc1ee;
-                color: #121212;
-                border: none;
-                padding: 12px 25px;
-                border-radius: 5px;
-                font-weight: bold;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            .submit-btn:hover {
-                background-color: #0bc1ee;
-            }
-            
-            /* Мои записи */
-            .bookings-list {
-                width: 100%;
-                background-color: #1e1e1e;
-                border-radius: 10px;
-                padding: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .bookings-title {
-                font-size: 22px;
-                margin-bottom: 25px;
-                color: #ffffff;
+            nav ul li {
+                margin: 5px 0;
             }
             
             .booking-item {
-                background-color: #252525;
-                border-radius: 5px;
-                padding: 15px;
-                margin-bottom: 15px;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            
-            .booking-info {
-                flex: 1;
-                min-width: 200px;
-            }
-            
-            .booking-name {
-                font-size: 18px;
-                color: #ffffff;
-                margin-bottom: 5px;
-            }
-            
-            .booking-meta {
-                color: #b0b0b0;
-                font-size: 14px;
-            }
-            
-            .booking-actions {
-                display: flex;
-                align-items: center;
+                flex-direction: column;
+                text-align: center;
             }
             
             .cancel-btn {
-                background-color: #ee0f38;
-                color: #121212;
-                border: none;
-                padding: 8px 15px;
-                border-radius: 5px;
-                font-weight: bold;
-                cursor: pointer;
-                transition: background-color 0.3s;
+                margin-top: 10px;
             }
-            
-            .cancel-btn:hover {
-                background-color: #ee0f38;
-            }
-            
-            /* Подвал сайта */
-            footer {
-                background-color: #121212;
-                padding: 40px 0 20px;
-                color: #b0b0b0;
-            }
-            
-            .footer-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 40px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
-            .footer-logo {
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-            
-            .footer-logo img {
-                height: 40px;
-                margin-right: 10px;
-            }
-            
-            .footer-logo-text {
-                font-size: 20px;
-                font-weight: bold;
-                color: #0bc1ee;
-            }
-            
-            .footer-contact {
-                margin-bottom: 15px;
-            }
-            
-            .footer-contact a {
-                color: #b0b0b0;
-                transition: color 0.3s;
-            }
-            
-            .footer-contact a:hover {
-                color: #ffffff;
-            }
-            
-            .footer-links h3 {
-                color: #ffffff;
-                margin-bottom: 20px;
-                font-size: 18px;
-            }
-            
-            .footer-links ul {
-                list-style: none;
-            }
-            
-            .footer-links li {
-                margin-bottom: 10px;
-            }
-            
-            .footer-links a {
-                color: #b0b0b0;
-                transition: color 0.3s;
-            }
-            
-            .footer-links a:hover {
-                color: #ffffff;
-            }
-            
-            .footer-bottom {
-                text-align: center;
-                margin-top: 40px;
-                padding-top: 20px;
-                border-top: 1px solid #333;
-            }
-            
-            /* Адаптивность */
-            @media (max-width: 768px) {
-                .account-container {
-                    flex-direction: column;
-                }
-                
-                .profile-card, .booking-form {
-                    min-width: 100%;
-                }
-                
-                .booking-item {
-                    flex-direction: column;
-                    gap: 15px;
-                }
-                
-                .booking-actions {
-                    justify-content: flex-end;
-                }
-                
-                .footer-container {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-            
-            @media (max-width: 576px) {
-                nav ul {
-                    display: none;
-                    flex-direction: column;
-                    width: 100%;
-                    margin-top: 20px;
-                }
-                
-                nav ul.show {
-                    display: flex;
-                }
-                
-                nav ul li {
-                    margin: 10px 0;
-                }
-                
-                .menu-toggle {
-                    display: block;
-                    background: none;
-                    border: none;
-                    color: #0bc1ee;
-                    font-size: 24px;
-                    cursor: pointer;
-                }
-                
-                .header-content {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-                
-                .form-row {
-                    flex-direction: column;
-                    gap: 0;
-                }
-                
-                .footer-container {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Шапка сайта -->
-        <header>
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <img src="https://gas-kvas.com/uploads/posts/2023-02/1676424607_gas-kvas-com-p-detskie-risunki-emblemi-15.png" alt="Логотип 'Моя семья – мой космос'">
-                        <span class="logo-text">Моя семья – мой космос</span>
-                    </div>
-                    <nav>
-                        <button class="menu-toggle">☰</button>
-                        <ul>
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="account.html">Личный кабинет</a></li>
-                            <li><a href="schedule.html">Расписание</a></li>
-                            <li><a href="competition.html">Конкурсы</a></li>
-                            <li><a href="#" class="logout-btn-mobile">Выйти</a></li>
-                        </ul>
-                    </nav>
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://gas-kvas.com/uploads/posts/2023-02/1676424607_gas-kvas-com-p-detskie-risunki-emblemi-15.png" alt="Логотип">
+                    <span class="logo-text">Моя семья – мой космос</span>
                 </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="schedule.html">Расписание</a></li>
+                        <li><a href="competition.html">Конкурсы</a></li>
+                    </ul>
+                </nav>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Основное содержимое -->
-        <section class="account-section">
-            <div class="container">
-                <h1 class="account-title">Личный кабинет</h1>
-                
-                <div class="account-container">
-                    <!-- Блок профиля -->
-                    <div class="profile-card">
-                        <div class="profile-header">
-                            <div class="profile-avatar" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwFCGhmH9R7iIqQmrP-wS4Gw36vKtR9xFG-A&s');">
-                            </div>
-                            <div class="profile-info">
-                                <h3>Биба Бобин</h3>
-                                <p>Участник конкурсов</p>
-                            </div>
+    <!-- Основное содержимое -->
+    <section class="account-section">
+        <div class="container">
+            <h1 class="account-title">Личный кабинет</h1>
+            
+            <div class="account-container">
+                <!-- Блок профиля -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwFCGhmH9R7iIqQmrP-wS4Gw36vKtR9xFG-A&s" alt="Аватар">
                         </div>
-                        
-                        <div class="profile-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Email</div>
-                                <div class="detail-value">Skalizdert@gmail.com</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Телефон</div>
-                                <div class="detail-value">+7 (123) 456-78-91</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Дата регистрации</div>
-                                <div class="detail-value">05.06.2025</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Участий в конкурсах</div>
-                                <div class="detail-value">1</div>
-                            </div>
-                            
-                            <a href="#" class="logout-btn">Выйти из аккаунта</a>
+                        <div class="profile-info">
+                            <h3>Биба Бобин</h3>
+                            <p>Участник конкурсов</p>
                         </div>
                     </div>
                     
-                    <!-- Форма записи на конкурсы -->
-                    <div class="booking-form">
-                        <h2 class="form-title">Запись на конкурс</h2>
-                        <form>
+                    <div class="detail-item">
+                        <div class="detail-label">Email</div>
+                        <div class="detail-value">Skalizdert@gmail.com</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Телефон</div>
+                        <div class="detail-value">+7 (123) 456-78-91</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Дата регистрации</div>
+                        <div class="detail-value">05.06.2025</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Участий в конкурсах</div>
+                        <div class="detail-value">1</div>
+                    </div>
+                    
+                    <button class="logout-btn">Выйти из аккаунта</button>
+                </div>
+                
+                <!-- Форма записи -->
+                <div class="booking-form">
+                    <h2 class="form-title">Запись на конкурс</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="competition" class="form-label">Конкурс</label>
+                            <select id="competition" class="form-select">
+                                <option value="">Выберите конкурс</option>
+                                <option value="1">Космический рисунок</option>
+                                <option value="2">Семейная олимпиада</option>
+                                <option value="3">Космодром</option>
+                                <option value="4">Галактический танец</option>
+                                <option value="5">Космическая кухня</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date" class="form-label">Дата</label>
+                            <input type="text" id="date" class="form-input" value="8 июля 2025" readonly>
+                        </div>
+                        
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="competition" class="form-label">Конкурс*</label>
-                                <select id="competition" class="form-select" required>
-                                    <option value="">Выберите конкурс</option>
-                                    <option value="1">Космический рисунок</option>
-                                    <option value="2">Семейная олимпиада</option>
-                                    <option value="3">Космодром</option>
-                                    <option value="4">Галактический танец</option>
-                                    <option value="5">Космическая кухня</option>
+                                <label for="time" class="form-label">Время</label>
+                                <select id="time" class="form-select">
+                                    <option value="">Выберите время</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="date" class="form-label">Дата*</label>
-                                <input type="text" id="date" class="form-input" value="8 июля 2025" readonly>
+                                <label for="people" class="form-label">Количество чел.</label>
+                                <input type="number" id="people" class="form-input" min="1" max="10" value="1">
                             </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="time" class="form-label">Время*</label>
-                                    <select id="time" class="form-select" required>
-                                        <option value="">Выберите время</option>
-                                        <option value="9:00">9:00</option>
-                                        <option value="10:00">10:00</option>
-                                        <option value="11:00">11:00</option>
-                                        <option value="12:00">12:00</option>
-                                        <option value="13:00">13:00</option>
-                                        <option value="14:00">14:00</option>
-                                        <option value="15:00">15:00</option>
-                                        <option value="16:00">16:00</option>
-                                        <option value="16:00">17:00</option>
-                                        <option value="16:00">18:00</option>
-                                        <option value="16:00">19:00</option>
-                                        <option value="16:00">20:00</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="people" class="form-label">Количество чел.*</label>
-                                    <input type="number" id="people" class="form-input" min="1" max="10" value="1" required>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Записаться</button>
-                        </form>
-                    </div>
-                    
-                    <!-- Мои записи -->
-                    <div class="bookings-list">
-                        <h2 class="bookings-title">Мои записи</h2>
+                        </div>
                         
-                        <div class="booking-item">
-                            <div class="booking-info">
-                                <div class="booking-name">Космический рисунок</div>
-                                <div class="booking-meta">8 июля 2025, 11:00 • 2 участника</div>
-                            </div>
-                            <div class="booking-actions">
-                                <button class="cancel-btn">Отменить</button>
-                            </div>
+                        <button type="submit" class="submit-btn">Записаться</button>
+                    </form>
+                </div>
+                
+                <!-- Мои записи -->
+                <div class="bookings-list">
+                    <h2 class="bookings-title">Мои записи</h2>
+                    
+                    <div class="booking-item">
+                        <div>
+                            <div class="booking-name">Космический рисунок</div>
+                            <div class="booking-meta">8 июля 2025, 11:00 • 2 участника</div>
                         </div>
-                        </div>
+                        <button class="cancel-btn">Отменить</button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Подвал сайта -->
-        <footer>
-            <div class="container">
-                <div class="footer-container">
-                    <div class="footer-about">
-                        <div class="footer-logo">
-                            <img src="https://gas-kvas.com/uploads/posts/2023-02/1676424607_gas-kvas-com-p-detskie-risunki-emblemi-15.png" alt="Логотип 'Моя семья – мой космос'">
-                            <span class="footer-logo-text">Моя семья – мой космос</span>
-                        </div>
-                        <div class="footer-contact">
-                            Телефон: <a href="tel:+79319332154">+7 931 933-21-54</a>
-                        </div>
-                        <div class="footer-contact">
-                            Email: <a href="mailto:Skalizdert@gmail.com">Skalizdert@gmail.com</a>
-                        </div>
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://gas-kvas.com/uploads/posts/2023-02/1676424607_gas-kvas-com-p-detskie-risunki-emblemi-15.png" alt="Логотип">
+                        <span class="footer-logo-text">Моя семья – мой космос</span>
                     </div>
-                    <div class="footer-links">
-                        <h3>Навигация</h3>
-                        <ul>
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="account.html">Личный кабинет</a></li>
-                            <li><a href="registration.html">Регистрация</a></li>
-                        </ul>
+                    <div class="footer-contact">
+                        Телефон: <a href="tel:+79319332154">+7 931 933-21-54</a>
                     </div>
-                    <div class="footer-links">
-                        <h3>Конкурсы</h3>
-                        <ul>
-                            <li><a href="schedule.html">Расписание</a></li>
-                            <li><a href="competition.html">Описание конкурсов</a></li>
-                            <li><a href="404.html">Страница не найдена</a></li>
-                        </ul>
+                    <div class="footer-contact">
+                        Email: <a href="mailto:Skalizdert@gmail.com">Skalizdert@gmail.com</a>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>© 2025 "Моя семья – мой космос". Ваши данные будут у каждого.</p>
+                
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="registration.html">Регистрация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Конкурсы</h3>
+                    <ul>
+                        <li><a href="schedule.html">Расписание</a></li>
+                        <li><a href="competition.html">Описание конкурсов</a></li>
+                        <li><a href="404.html">Страница не найдена</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-    </body>
+            
+            <div class="footer-bottom">
+                <p>© 2025 "Моя семья – мой космос". Ваши данные будут у каждого.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
