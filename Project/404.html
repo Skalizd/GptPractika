@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница не найдена | Моя семья – мой космос</title>
     <style>
-        /* Общие стили */
+        /* Общие стили  */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
         }
         
         body {
-            background-color: #121212;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #e0e0e0;
             line-height: 1.6;
             min-height: 100vh;
@@ -24,21 +24,28 @@
         
         a {
             text-decoration: none;
-            color: #0bc1ee;
+            color: #ff6b6b;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #ff9e6b;
+            text-decoration: underline;
         }
         
         .container {
             width: 100%;
-            max-width: 1920px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         /* Шапка сайта */
         header {
-            background-color: #1e1e1e;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(90deg, #ff6b6b, #ff9e6b);
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid #ffd166;
         }
         
         .header-content {
@@ -55,12 +62,17 @@
         .logo img {
             height: 50px;
             margin-right: 15px;
+            border: 2px solid #ffd166;
+            border-radius: 50%;
+            padding: 3px;
+            background: white;
         }
         
         .logo-text {
             font-size: 24px;
             font-weight: bold;
-            color: #0bc1ee;
+            color: #1a1a2e;
+            text-shadow: 2px 2px 0 #ffd166;
         }
         
         nav ul {
@@ -69,19 +81,24 @@
         }
         
         nav ul li {
-            margin-left: 25px;
+            margin-left: 20px;
+            padding: 5px 10px;
+            background: #1a1a2e;
+            border-radius: 5px;
+            border: 1px solid #ffd166;
         }
         
         nav ul li a {
             font-size: 16px;
-            transition: color 0.3s;
+            color: #ffd166;
         }
         
         nav ul li a:hover {
-            color: #ffffff;
+            color: white;
+            text-decoration: none;
         }
         
-        /* Основное содержимое 404 */
+        /* Основное содержимое 404*/
         .main-content {
             flex: 1;
             display: flex;
@@ -89,117 +106,151 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 0;
+            padding: 50px 0;
         }
+        
         .error-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(26, 26, 46, 0.8);
+            padding: 30px;
+            border: 3px solid #ff6b6b;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
         }
-
         
         .error-code {
             font-size: 120px;
             font-weight: bold;
-            color: #0bc1ee;
-            margin-bottom: 20px;
-            line-height: 1;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .error-title {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #ffd166;
         }
         
         .error-description {
             font-size: 18px;
-            color: #b0b0b0;
-            margin-bottom: 40px;
+            color: #e0e0e0;
+            margin-bottom: 30px;
             max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
         }
         
         .error-image {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto 40px;
-            background-color: #0bc1ee;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #ff6b6b, #ff9e6b);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            border: 5px solid #ffd166;
+            box-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
         }
         
         .error-image img {
             max-width: 80%;
             max-height: 80%;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
         }
         
         .home-button {
             display: inline-block;
-            background-color: #0bc1ee;
-            color: #121212;
-            padding: 15px 30px;
-            border-radius: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #ff9e6b);
+            color: #1a1a2e;
+            padding: 15px 40px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 18px;
-            transition: background-color 0.3s;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            border: 3px solid #ffd166;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.5);
+            margin-top: 20px;
         }
         
         .home-button:hover {
-            background-color: #9a67ea;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.8);
+            color: #1a1a2e;
+            text-decoration: none;
         }
         
-        /* Подвал сайта */
+        /* Подвал сайта  */
         footer {
-            background-color: #121212;
-            padding: 40px 0 20px;
-            color: #b0b0b0;
+            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            padding: 30px 0 15px;
+            color: #e0e0e0;
+            border-top: 3px solid #ffd166;
         }
         
         .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
+        }
+        
+        .footer-about, .footer-links {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid #ffd166;
         }
         
         .footer-logo {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .footer-logo img {
             height: 40px;
             margin-right: 10px;
+            border: 2px solid #ffd166;
+            border-radius: 50%;
+            padding: 2px;
+            background: white;
         }
         
         .footer-logo-text {
             font-size: 20px;
             font-weight: bold;
-            color: #0bc1ee;
+            color: #ffd166;
         }
         
         .footer-contact {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 16px;
         }
         
         .footer-contact a {
-            color: #b0b0b0;
-            transition: color 0.3s;
+            color: #ff6b6b;
         }
         
         .footer-contact a:hover {
-            color: #ffffff;
+            color: #ff9e6b;
         }
         
         .footer-links h3 {
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-size: 18px;
+            color: #ffd166;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 2px solid #ff6b6b;
+            padding-bottom: 5px;
         }
         
         .footer-links ul {
@@ -211,23 +262,24 @@
         }
         
         .footer-links a {
-            color: #b0b0b0;
-            transition: color 0.3s;
+            color: #e0e0e0;
+            font-size: 16px;
         }
         
         .footer-links a:hover {
-            color: #ffffff;
+            color: #ff9e6b;
         }
         
         .footer-bottom {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ffd166;
+            font-size: 14px;
         }
         
-        /* Адаптивность */
-        @media (max-width: 992px) {
+        /* Адаптивность - простая реализация */
+        @media (max-width: 900px) {
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -241,37 +293,19 @@
             }
         }
         
-        @media (max-width: 796px) {
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                align-items: flex-start;
             }
             
             nav ul {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 20px;
-                display: none;
-            }
-            
-            nav ul.show {
-                display: flex;
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav ul li {
-                margin: 10px 0;
-                margin-left: 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                color: #bb86fc;
-                font-size: 24px;
-                cursor: pointer;
-                align-self: flex-end;
-                margin-top: -40px;
+                margin: 5px;
             }
             
             .footer-container {
@@ -286,19 +320,42 @@
                 font-size: 26px;
             }
             
-            .error-description {
-                font-size: 16px;
-            }
-            
             .error-image {
                 width: 200px;
                 height: 200px;
             }
         }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            nav ul li {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+            
+            .error-code {
+                font-size: 60px;
+            }
+            
+            .error-title {
+                font-size: 22px;
+            }
+            
+            .error-description {
+                font-size: 16px;
+            }
+            
+            .home-button {
+                padding: 12px 30px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -319,7 +376,7 @@
         </div>
     </header>
 
-    <!-- Основное содержимое -->
+    <!-- Основное содержимое - фокус на ошибке -->
     <main class="main-content">
         <div class="container">
             <div class="error-container">
@@ -328,13 +385,13 @@
                 </div>
                 <h1 class="error-code">404</h1>
                 <h2 class="error-title">Страница не найдена</h2>
-                <p class="error-description">Окак.</p>
+                <p class="error-description">Ой! Похоже, вы заблудились в космосе. Страница, которую вы ищете, исчезла или никогда не существовала. Не волнуйтесь, наша команда уже ищет её!</p>
                 <a href="index.html" class="home-button">Вернуться на главную</a>
             </div>
         </div>
     </main>
 
-    <!-- Подвал сайта -->
+    <!-- Подвал сайта - просто и понятно -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -365,6 +422,8 @@
                     <ul>
                         <li><a href="schedule.html">Расписание</a></li>
                         <li><a href="404.html">Страница не найдена</a></li>
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Контакты</a></li>
                     </ul>
                 </div>
             </div>
